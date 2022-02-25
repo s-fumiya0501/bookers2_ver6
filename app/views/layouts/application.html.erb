@@ -38,7 +38,7 @@
                 </li>
                 <li>
                   <%= link_to destroy_user_session_path, method: :delete ,class:"nav-link text-light" do %>
-                    <i class="fas fa-sign-out-alt"></i>Books
+                    <i class="fas fa-sign-out-alt"></i>Log out
                   <% end %>
                 </li>
               <% else %>
@@ -54,12 +54,12 @@
                 </li>
                 <li>
                   <%= link_to new_user_registration_path,class:"nav-link text-light" do %>
-                    <i class="fas fa-user-plus"></i>sign up
+                    <i class="fas fa-user-plus"></i>Sign up
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_user_session_path,class:"nav-link text-light" do %>
-                    <i class="fas fa-sign-in-alt"></i>login
+                    <i class="fas fa-sign-in-alt"></i>Log in
                   <% end %>
                 </li>
               <% end %>
@@ -68,6 +68,11 @@
         </div>
       </nav>
     </header>
+    <% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+    <% end %>
     <%= yield %>
     <footer>
       <div class="container mt-5">
