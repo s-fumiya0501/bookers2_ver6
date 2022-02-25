@@ -1,0 +1,29 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+        <%= render "users/userinfo",user:@user%>
+        <%= render "form",book:@new_book%>
+    </div>
+    <div class="col-md-8 offset-md-1">
+        <h2>Book detail</h2>
+        <table class="table">
+  		    <tbody>
+            <tr>
+              <td>
+                <%= link_to user_path(@user) do %>
+                  <%= image_tag @user.get_profile_image(63,63) %>
+                  <br><%= @user.name %>
+                <% end %>
+              </td>
+              <td><%= @book.title %></td>
+              <td><%= @book.body %></td>
+              <% if @book.user == current_user %>
+                <td><%= link_to "Edit", edit_book_path(@book),class:"btn btn-sm btn-success"%></td>
+                <td><%= link_to "Destroy", book_path(@book),method: :delete,class:"btn btn-sm btn-danger", data: { confirm: '本当に消しますか' }%></td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
