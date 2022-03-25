@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+#notice {
+  color: green;
+}
+
+#error_explanation {
+  color: red;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+.like{
+  color:#e6004d;
+}
