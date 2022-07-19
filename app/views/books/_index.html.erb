@@ -20,7 +20,20 @@
                 <%= link_to book.title ,book_path(book)%>
             </td>
             <td>
-                <%= book.body%>
+              <%= book.body%>
+            </td>
+            <td>
+                <% if book.favorited_by?(current_user) %>
+                  <%= link_to book_favorites_path(book_id: book.id),class: "like" ,method: :delete do %>
+                    <i class="fas fa-heart like"></i><%= book.favorites.count%>
+                  <% end %>
+                <% else %>
+                  <%= link_to book_favorites_path(book_id: book.id), method: :post do %>
+                    <i class="fas fa-heart unlike"></i><%= book.favorites.count %>
+                  <% end %>
+                <% end %>
+            </td>
+              <td></td>
             </td>
         </tr>
     <% end %>
