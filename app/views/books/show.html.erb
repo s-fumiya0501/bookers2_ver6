@@ -17,6 +17,7 @@
             </td>
             <td><%= @book.title %></td>
             <td><%= @book.body %></td>
+            <td>👀数: <%= @book.view_counts.count %></td>
             <% if @book.user == current_user %>
               <td><%= link_to "Edit", edit_book_path(@book),class:"btn btn-sm btn-success"%></td>
               <td><%= link_to "Destroy", book_path(@book),method: :delete,class:"btn btn-sm btn-danger", data: { confirm: '本当に消しますか' }%></td>
