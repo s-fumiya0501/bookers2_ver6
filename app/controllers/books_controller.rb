@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   def index
     @book = Book.new
-    @books = Book.all
+    @books = Book.includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
     @user = current_user
   end
 
