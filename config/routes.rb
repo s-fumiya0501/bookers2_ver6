@@ -6,6 +6,8 @@ resources :books,only: [:create, :index, :show, :destroy,:update,:edit]do
   resource :favorites, only: [:create, :destroy]
   resources :book_comments, only: [:create,:destroy]
 end
-resources :users, only: [:show, :edit,:create,:index,:update]
+resources :users, only: [:show, :edit,:create,:index,:update]do
+  get "search", to: "users#search"
+end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
