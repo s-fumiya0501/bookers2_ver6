@@ -61,6 +61,16 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    domain: 'gmail.com',
+    port: 587,
+    user_name: 'sano.fumiya.infratop@gmail.com',  #Gmailアドレス（credentials.yml.encに記載）
+    password:  'fxsycipsfkmtinef',  #アプリパスワード（credentials.yml.encに記載）
+    authentication: :login
+  }
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -73,4 +83,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
 end

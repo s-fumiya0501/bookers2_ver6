@@ -1,0 +1,37 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+        <%= render "users/userinfo",user:current_user%>
+        <%= render "books/form",book:@book%>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Group Detail</h2>
+      <table class='table table-hover table-inverse'>
+        <tr>
+          <td><%= image_tag @group.group_image(40,48) %></td>
+          <td><%= @group.name %></td>
+          <td><%= @group.introduction %></td>
+          <td>
+              <% if @group.owner_id == current_user.id %>
+                <%= link_to 'Edit', edit_group_path(@group), class: "btn btn-sm btn-success" %>
+                <%= link_to 'Mail',group_new_mail_path(@group) %>
+              <% elsif @group.users.include?(current_user) %>
+                <%= link_to 'Leave this group', group_path(@group), method: :delete, class: "btn btn-sm btn-danger" %>
+              <% else %>
+                <%= link_to 'Join this group', group_join_path(@group), class: "btn btn-sm btn-success" %>
+              <% end %>
+          </td>
+        </tr>
+      </table>
+      <table class='table table-hover table-inverse'>
+      <% @members.each do |member|%>
+        <tr>
+          <td><%= image_tag member.get_profile_image(40,48) %></td>
+          <td><%= member.name %></td>
+          <td><%= member.email %></td>
+        </tr>
+      <%end%>
+      </table>
+    </div>
+  </div>
+</div>
