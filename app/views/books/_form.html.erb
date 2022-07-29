@@ -8,6 +8,10 @@
     <label for="book_body">Opinion</label>
     <%= f.text_area :body,class:"form-control book_body"%>
     </div>
+    <div class="form-group">
+    <label for="book_tag">Tag</label>
+    <%= f.text_field :tag ,class:"form-control book_tag"%>
+    </div>
     <div class="form-group row" id="star">
     <%= f.label :star,'評価 ', class:'col-md-3 col-form-label' %>
     <%= f.hidden_field :star, id: :review_star %>
@@ -17,10 +21,9 @@
     </div>
   <script>
   $('#star').raty({
-    size     : 36,
+    size     : 20,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
-
     scoreName: 'book[star]',
     half: false,
   });

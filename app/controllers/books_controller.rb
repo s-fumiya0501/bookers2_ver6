@@ -1,8 +1,14 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
   def index
+    if params[:sort] == "day"
+      @books = Book.day
+    elsif params[:sort] == "star"
+      @books = Book.star
+    else
+      @books = Book.all
+    end
     @book = Book.new
-    @books = Book.all
     @user = current_user
   end
 
@@ -49,6 +55,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body,:star)
+    params.require(:book).permit(:title, :body,:star, :tag)
   end
 end

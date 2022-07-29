@@ -7,5 +7,6 @@ resources :books,only: [:create, :index, :show, :destroy,:update,:edit]do
   resources :book_comments, only: [:create,:destroy]
 end
 resources :users, only: [:show, :edit,:create,:index,:update]
+get "search_tag" => "searches#search_tag"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
