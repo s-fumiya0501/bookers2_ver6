@@ -1,0 +1,38 @@
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+/home/fumiya238/.rbenv/versions/2.6.3/bin/ruby -I /home/fumiya238/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20220730-19622-14uzx0d.rb extconf.rb
+creating Makefile
+
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+bcrypt_ext.c: In function ‘bcrypt_wrapper’:
+bcrypt_ext.c:27:19: warning: implicit declaration of function ‘ruby_bcrypt’; did you mean ‘ruby_script’? [-Wimplicit-function-declaration]
+   27 |     return (VALUE)ruby_bcrypt(args->output, args->key, args->salt);
+      |                   ^~~~~~~~~~~
+      |                   ruby_script
+At top level:
+bcrypt_ext.c:25:14: warning: ‘bcrypt_wrapper’ defined but not used [-Wunused-function]
+   25 | static VALUE bcrypt_wrapper(void *_args) {
+      |              ^~~~~~~~~~~~~~
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+In file included from wrapper.c:27:
+/home/fumiya238/.rbenv/versions/2.6.3/include/ruby-2.6.0/ruby/backward/util.h:2:2: warning: #warning use "ruby/util.h" instead of bare "util.h" [-Wcpp]
+    2 | #warning use "ruby/util.h" instead of bare "util.h"
+      |  ^~~~~~~
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+linking shared-object bcrypt_ext.so
+
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20220730-19622-103xvox
