@@ -1,0 +1,15 @@
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/home/fumiya238/.rbenv/versions/2.6.3/bin/ruby -I /home/fumiya238/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20220728-20418-1shejsm.rb extconf.rb
+creating Makefile
+
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/fumiya238/Webcamp/bookers2_ver6/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20220728-20418-1i961bt/skiptrace/internal
