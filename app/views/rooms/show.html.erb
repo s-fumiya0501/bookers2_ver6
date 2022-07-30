@@ -13,26 +13,41 @@
   </div>
 <% end %>
 <hr>
-<div class="chats">
-  <div class="chat">
-    <% if @messages.present? %>
-      <% @messages.each do |m| %>
-        <div class="chat-box">
-          <div class="chat-face">
-            <%= image_tag m.user.get_profile_image(63,63) %>
+<div class="container">
+  <% if @messages.present? %>
+    <% @messages.each do |m| %>
+      <% if m.user.id == current_user.id %>
+        <div class="row">
+          <div class="col-md-12 clearfix">
+            <div class="float-left test-box">
+              <%= image_tag m.user.get_profile_image(63,63) %>
+              <%= m.user.name %>さん<br>
+              <strong><%= m.body %></strong>
+            </div>
           </div>
-          <div class="chat-hukidashi"> <strong><%= m.body %></strong> <br>
-            <%= m.created_at.strftime("%Y-%m-%d %H:%M")%>
+        </div>
+      <% else %>
+        <div class="row">
+          <div class="col-md-12 clearfix">
+            <div class="float-right test-box">
+              <%= m.user.name %>さん
+              <%= image_tag m.user.get_profile_image(63,63) %><br>
+              <strong><%= m.body %></strong>
+            </div>
           </div>
         </div>
       <% end %>
     <% end %>
-  </div>
-  <div class="posts">
-    <%= form_with model:@message do |f| %>
-      <%= f.text_field :body, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-text-field" %>
-        <%= f.hidden_field :room_id, value: @room.id %>
-          <%= f.submit "投稿",class: 'form-submit'%>
-    <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12 clearfix">
+      <%= form_with model:@message do |f| %>
+        <%= f.text_field :body, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-text-field" %>
+          <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.submit "投稿",class: 'form-submit'%>
+      <% end %>
+    </div>
   </div>
 </div>
+
+

@@ -1,6 +1,32 @@
 <h2>Follower Users</h2>
 <% if @users.exists? %>
-  <%= render '/users/index', users: @users %>
+        <table class="table table-hover table-inverse">
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>name</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user|%>
+                <tr>
+                    <td>
+                        <%= link_to user_path(user) do %>
+                            <%= image_tag user.get_profile_image(40,48) %>
+                        <%end%>
+                    </td>
+                    <td>
+                        <%= user.name%>
+                    </td>
+                    <td><%= render "relationships/btn", user: user %></td>
+                    <td>
+                        <%= link_to "Show",user_path(user) %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+        </table>
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>
