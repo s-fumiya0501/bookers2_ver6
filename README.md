@@ -1,24 +1,13 @@
 # README
+#ブランチの説明
+## product7
+- SNS系
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## product8
+- 記録系
 
-Things you may want to cover:
+## product9
+- コミュニティ系
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## product10
+- レビュー系
